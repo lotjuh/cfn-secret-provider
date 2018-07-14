@@ -17,6 +17,8 @@ def handler(request, context):
         return cfn_dsakey_provider.handler(request, context)
     elif request['ResourceType'] == 'Custom::KeyPair':
         return cfn_keypair_provider.handler(request, context)
+    elif request['ResourceType'] == 'Custom::IAMSSHPublicKey':
+        return cfn_iam_publickey_provider.handler(request, context)
     elif request['ResourceType'] == 'Custom::AccessKey':
         return cfn_accesskey_provider.handler(request, context)
     elif request['ResourceType'] == 'Custom::SecretsManagerSecret':
